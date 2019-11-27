@@ -1,7 +1,7 @@
-import { withRouter } from 'react-router'
+import { useHistory, useLocation } from 'react-router-dom'
 import './index.scss'
 
-function MobileHeaderContainer(props) {
+export default function MobileHeaderContainer(props) {
   const navList = [
     {
       router: '/index', //跳转url
@@ -20,13 +20,16 @@ function MobileHeaderContainer(props) {
     }
   ]
 
-  const handleClick = href => () => props.router.replace(href)
+  const history = useHistory()
+  const location = useLocation()
+
+  const handleClick = href => () => history.replace(href)
 
   // const getIcons = (path, active) => {
   //   return require(`./images${path}${active ? '_select' : ''}.svg`)
   // }
 
-  const { location, showHeader } = props
+  const { showHeader } = props
   return (
     <div className={`header-nav-bar ${showHeader ? '' : 'hidden'}`}>
       {_.map(navList, ({ activeUrl, router, text }, k) => {
@@ -47,5 +50,3 @@ function MobileHeaderContainer(props) {
     </div>
   )
 }
-
-export default withRouter(MobileHeaderContainer)

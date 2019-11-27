@@ -2,7 +2,7 @@ import { lazy } from 'react'
 
 export const routes = [
   {
-    IndexRoute: true,
+    path: '/',
     component: lazy(() => import('src/containers/activities_tamplate'))
   },
   {
