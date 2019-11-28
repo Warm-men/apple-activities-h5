@@ -1,28 +1,27 @@
 module.exports = {
   proxy: {
-    '/dev/*': {
+    '/develop/*': {
       target: 'https://dev.tengmoney.com',
       secure: false,
       changeOrigin: true,
-      preserveHeaderKeyCase: true,
-      hostRewrite: true,
-      autoRewrite: true
+      pathRewirete: {
+        '/develop': ''
+      }
     },
     '/test': {
       target: 'https://test.tengmoney.com',
       secure: false,
-      changeOrigin: true,
-      preserveHeaderKeyCase: true,
-      hostRewrite: true,
-      autoRewrite: true
+      changeOrigin: true
     },
     '/www': {
       target: 'https://www.tengmoney.com',
       secure: false,
+      changeOrigin: true
+    },
+    '/app/*': {
+      target: 'http://www.ih5.cn',
       changeOrigin: true,
-      preserveHeaderKeyCase: true,
-      hostRewrite: true,
-      autoRewrite: true
+      secure: false
     }
   }
 }
