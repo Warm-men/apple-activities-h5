@@ -584,7 +584,13 @@ module.exports = function(webpackEnv) {
           watch: paths.appSrc,
           silent: true,
           formatter: typescriptFormatter
-        })
+        }),
+      new webpack.DefinePlugin({
+        // react源码入口会判断process.env.NODE_ENV是development还是production做优化处理
+        // 定义process.env.NODE_ENV让react源码读取 这里的process.env.NODE_ENV只可以在react源码及项目业务组件中读取
+        'process.env.NODE_ENV': JSON.stringify('development'),
+        SERVER: JSON.stringify('localhost')
+      })
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
     // Tell Webpack to provide empty mocks for them so importing them works.

@@ -1,7 +1,23 @@
 module.exports = {
   proxy: {
-    '/api': {
-      target: 'http://backend.zhihui92.cn',
+    '/dev/*': {
+      target: 'https://dev.tengmoney.com',
+      secure: false,
+      changeOrigin: true,
+      preserveHeaderKeyCase: true,
+      hostRewrite: true,
+      autoRewrite: true
+    },
+    '/test': {
+      target: 'https://test.tengmoney.com',
+      secure: false,
+      changeOrigin: true,
+      preserveHeaderKeyCase: true,
+      hostRewrite: true,
+      autoRewrite: true
+    },
+    '/www': {
+      target: 'https://www.tengmoney.com',
       secure: false,
       changeOrigin: true,
       preserveHeaderKeyCase: true,

@@ -5,18 +5,18 @@ export default function MobileHeaderContainer(props) {
   const navList = [
     {
       router: '/index', //跳转url
-      activeUrl: ['/', '/home'], //高亮url
-      text: '首页'
+      activeUrl: ['/', '/index'], //高亮url
+      text: '活动模板'
     },
     {
       router: '/activities_manage',
-      activeUrl: ['/data_form'],
-      text: '33'
+      activeUrl: ['/activities_manage'],
+      text: '活动管理'
     },
     {
       router: '/data_form',
       activeUrl: ['/data_form'],
-      text: '44'
+      text: '数据看板'
     }
   ]
 
@@ -30,6 +30,7 @@ export default function MobileHeaderContainer(props) {
   // }
 
   const { showHeader } = props
+
   return (
     <div className={`header-nav-bar ${showHeader ? '' : 'hidden'}`}>
       {_.map(navList, ({ activeUrl, router, text }, k) => {

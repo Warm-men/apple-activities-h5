@@ -5,10 +5,6 @@ import MobileHeaderContainer from 'src/containers/header/mobile/mobile_header_co
 import { Router, Route, Redirect } from 'react-router'
 import * as history from 'history'
 
-// const ActivitiesTamplate = lazy(() =>
-//   import('src/containers/activities_tamplate')
-// )
-
 const browserHistory = history.createBrowserHistory()
 
 function RenderRouters(route, k) {

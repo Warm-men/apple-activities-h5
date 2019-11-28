@@ -5,7 +5,6 @@ export function Layout(props) {
   return (
     <div className="g-layout">
       {props.children}
-      <div>12321312</div>
       <MobileHeaderContainer />
     </div>
   )
